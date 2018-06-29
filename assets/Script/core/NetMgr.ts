@@ -12,11 +12,13 @@ export default class NetMgr {
         if (this._isConnect()) return;
 
         // 第一次建立链接比如wss://192.168.1.188:9200?token=后台给的token 必须带token （如果是游客 那么是没有token的值）
-        if (VVMgr.token) {
-            extraUrl = extraUrl + encodeURI("?token=" + VVMgr.token);
-        }
-        cc.log("NetMgr _connect ", extraUrl);
-        const _wss = new WebSocket(extraUrl);
+      //  if (VVMgr.token) {
+       //     extraUrl = extraUrl + encodeURI("?token=" + VVMgr.token);
+       // }
+     //   cc.log("NetMgr _connect ", extraUrl);
+       // const _wss = new WebSocket(extraUrl);
+	    const _wss = new WebSocket(NetMgr._URL, "chat", cc.url.raw("resources/cacert.pem"));
+
         this._wss = _wss;
         _wss.onopen = function(evt) { 
             cc.log("JS-WSS Connection open ..."); 
