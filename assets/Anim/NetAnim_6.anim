@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "NetAnim_6",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "6dca8b4d-bb97-439c-b2de-4ec51803f85d"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "207c79d5-cd74-4236-b2af-471ef30e611f"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "f391212b-45f6-4283-83d2-b7f3dab619cd"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "4c857a37-4f48-4226-9d42-8d83a762d12a"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

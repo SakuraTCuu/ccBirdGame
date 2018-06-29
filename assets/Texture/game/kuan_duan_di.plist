@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>kuan_duan_di.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{601,430}</string>
+                <key>spriteSourceSize</key>
+                <string>{601,430}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{601,430}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>kuan_duan_di.png</string>
+            <key>size</key>
+            <string>{603,432}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:78dbeb831ed795e5bb3e4af29848e048:012d0e75f3acb82f65d79c3dff5ca544:71fe57ea94e448f0a539ce76e9b5fab9$</string>
+            <key>textureFileName</key>
+            <string>kuan_duan_di.png</string>
+        </dict>
+    </dict>
+</plist>

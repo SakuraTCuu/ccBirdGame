@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>dating_beijing.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{750,1334}</string>
+                <key>spriteSourceSize</key>
+                <string>{750,1334}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{750,1334}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>hall_di.png</string>
+            <key>size</key>
+            <string>{752,1336}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:145f51761bfa0c77caec299432d7a2a2:21f7124cf623313a65aa937a8f850e7e:051fcc05243e548bc475d298bf0b40ca$</string>
+            <key>textureFileName</key>
+            <string>hall_di.png</string>
+        </dict>
+    </dict>
+</plist>

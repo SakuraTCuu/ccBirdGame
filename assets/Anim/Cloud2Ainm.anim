@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Cloud2Ainm",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 5.983333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "props": {
+      "y": [
+        {
+          "frame": 0,
+          "value": 390
+        },
+        {
+          "frame": 1,
+          "value": 370
+        },
+        {
+          "frame": 2,
+          "value": 390
+        },
+        {
+          "frame": 4,
+          "value": 420
+        },
+        {
+          "frame": 5.983333333333333,
+          "value": 390
+        }
+      ]
+    }
+  },
+  "events": []
+}

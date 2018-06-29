@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "92628538-7b7b-42e3-a4c1-623e87af01f0",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "callServer_qq_icon": {
+      "ver": "1.0.3",
+      "uuid": "40e7608a-9f51-4b7b-8233-62746c7427f0",
+      "rawTextureUuid": "92628538-7b7b-42e3-a4c1-623e87af01f0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 52,
+      "height": 58,
+      "rawWidth": 52,
+      "rawHeight": 58,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

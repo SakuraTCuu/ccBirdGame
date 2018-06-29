@@ -1,0 +1,34 @@
+{
+  "ver": "1.2.4",
+  "uuid": "b91cb2db-a153-403e-9dd5-534de552c3b1",
+  "rawTextureUuid": "3d640e62-ce7a-440b-adfa-ec9992d605e3",
+  "size": {
+    "width": 752,
+    "height": 1336
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "dating_beijing.png": {
+      "ver": "1.0.3",
+      "uuid": "60a40c9c-f53a-462c-9cf8-49b3841219c0",
+      "rawTextureUuid": "3d640e62-ce7a-440b-adfa-ec9992d605e3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 750,
+      "height": 1334,
+      "rawWidth": 750,
+      "rawHeight": 1334,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "ProgressAnim",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.0166666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "8e80b990-f307-41e6-a77d-6b16d1f05702"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "4c207435-f1dd-4429-9c35-ed5a24a7fbd8"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "5a7b2cec-1a67-4d44-a091-4bcb85a16a9a"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "a4c0524f-a83b-46e3-98e1-2e3900f7a473"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "628559e9-2b6b-42d9-80c6-70e6e84457c9"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

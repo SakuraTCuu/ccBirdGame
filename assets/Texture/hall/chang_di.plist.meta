@@ -1,0 +1,34 @@
+{
+  "ver": "1.2.4",
+  "uuid": "3dd93057-7131-43a7-adfb-d0da0b150f9f",
+  "rawTextureUuid": "71993507-2c03-4079-83ac-cf5243001acb",
+  "size": {
+    "width": 603,
+    "height": 952
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "chang_di.png": {
+      "ver": "1.0.3",
+      "uuid": "6d86626b-d998-4d82-92c4-f2b230e13bba",
+      "rawTextureUuid": "71993507-2c03-4079-83ac-cf5243001acb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 601,
+      "height": 950,
+      "rawWidth": 601,
+      "rawHeight": 950,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

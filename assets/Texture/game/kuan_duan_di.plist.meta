@@ -1,0 +1,34 @@
+{
+  "ver": "1.2.4",
+  "uuid": "339e0acf-e74d-4461-8e20-132b897bd075",
+  "rawTextureUuid": "97f62a86-66f3-48ac-924b-a5512124ccd2",
+  "size": {
+    "width": 603,
+    "height": 432
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "kuan_duan_di.png": {
+      "ver": "1.0.3",
+      "uuid": "8524c3fd-9bd8-445b-ad30-dca5b92baff4",
+      "rawTextureUuid": "97f62a86-66f3-48ac-924b-a5512124ccd2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 601,
+      "height": 430,
+      "rawWidth": 601,
+      "rawHeight": 430,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

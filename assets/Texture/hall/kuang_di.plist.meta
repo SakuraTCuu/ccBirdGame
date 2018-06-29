@@ -1,0 +1,34 @@
+{
+  "ver": "1.2.4",
+  "uuid": "c64caa99-0df3-41d3-9ff2-fbbf36acd32a",
+  "rawTextureUuid": "e1e8221d-4c39-4f8f-bbad-c1706e0f2453",
+  "size": {
+    "width": 603,
+    "height": 542
+  },
+  "type": "Texture Packer",
+  "subMetas": {
+    "kuang_di.png": {
+      "ver": "1.0.3",
+      "uuid": "7846ab68-b6d2-4a1b-a570-997b2a5aee9f",
+      "rawTextureUuid": "e1e8221d-4c39-4f8f-bbad-c1706e0f2453",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 601,
+      "height": 540,
+      "rawWidth": 601,
+      "rawHeight": 540,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "spriteType": "normal",
+      "subMetas": {}
+    }
+  }
+}

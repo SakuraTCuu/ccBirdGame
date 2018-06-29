@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "29987358-a686-4dad-8ded-a59859053655",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "xueliang_icon": {
+      "ver": "1.0.3",
+      "uuid": "aa1deca9-66b2-4a22-a70d-ee5da0e9c9ff",
+      "rawTextureUuid": "29987358-a686-4dad-8ded-a59859053655",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 128,
+      "height": 136,
+      "rawWidth": 128,
+      "rawHeight": 136,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

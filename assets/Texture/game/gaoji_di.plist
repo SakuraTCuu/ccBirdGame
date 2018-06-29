@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>gaojichang_di.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{750,1334}</string>
+                <key>spriteSourceSize</key>
+                <string>{750,1334}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{750,1334}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>gaoji_di.png</string>
+            <key>size</key>
+            <string>{752,1336}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:72470e306efb2642f66134596ceda8f7:622eb5dcf97b56e44d327784a880bd6c:9839f5050da7816bc0116f740ca37bd4$</string>
+            <key>textureFileName</key>
+            <string>gaoji_di.png</string>
+        </dict>
+    </dict>
+</plist>

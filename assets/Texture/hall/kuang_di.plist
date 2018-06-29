@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>kuang_di.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{601,540}</string>
+                <key>spriteSourceSize</key>
+                <string>{601,540}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{601,540}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>kuang_di.png</string>
+            <key>size</key>
+            <string>{603,542}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:6985fb4d70fc4c7ca02060dfb4b0a9c0:61d82d02b85b177e82a1779cde187363:11a6b24b9a6cd303e079833fff5208e8$</string>
+            <key>textureFileName</key>
+            <string>kuang_di.png</string>
+        </dict>
+    </dict>
+</plist>

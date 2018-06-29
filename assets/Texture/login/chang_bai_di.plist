@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>chang_bai_di.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{511,590}</string>
+                <key>spriteSourceSize</key>
+                <string>{511,590}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{511,590}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>chang_bai_di.png</string>
+            <key>size</key>
+            <string>{513,592}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:4503d664558e66ed95e4984a6fcb803d:629ee1e838bc465b46f22bb64164048c:9b9e93d94a93c59c286840540b0c4ab9$</string>
+            <key>textureFileName</key>
+            <string>chang_bai_di.png</string>
+        </dict>
+    </dict>
+</plist>

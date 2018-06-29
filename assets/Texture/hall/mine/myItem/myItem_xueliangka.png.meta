@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "518c7b94-a56c-4151-91ab-4298c9a0bc45",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "myItem_xueliangka": {
+      "ver": "1.0.3",
+      "uuid": "cc7985ef-c0d4-452a-81a1-7490fb6a752b",
+      "rawTextureUuid": "518c7b94-a56c-4151-91ab-4298c9a0bc45",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 128,
+      "height": 136,
+      "rawWidth": 128,
+      "rawHeight": 136,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

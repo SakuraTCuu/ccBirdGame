@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "26f6b474-7c0d-4cb7-b255-a97dafa07d78",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "mybox_logistics_title": {
+      "ver": "1.0.3",
+      "uuid": "2141a940-e062-4673-b6a3-6cb6eb80ba06",
+      "rawTextureUuid": "26f6b474-7c0d-4cb7-b255-a97dafa07d78",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 202,
+      "height": 57,
+      "rawWidth": 202,
+      "rawHeight": 57,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

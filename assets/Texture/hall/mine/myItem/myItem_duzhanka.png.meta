@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "9b9a81f8-362d-463f-916a-646c097e9112",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "myItem_duzhanka": {
+      "ver": "1.0.3",
+      "uuid": "047f5433-716b-4f36-97a3-d77175872027",
+      "rawTextureUuid": "9b9a81f8-362d-463f-916a-646c097e9112",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 128,
+      "height": 136,
+      "rawWidth": 128,
+      "rawHeight": 136,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
