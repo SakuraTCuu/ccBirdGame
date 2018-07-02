@@ -4,12 +4,16 @@ import { NetPool } from "./bullet/NetPool";
 import { BulletPool } from "./bullet/BulletPool";
 import { BirdPool } from "./BirdPool";
 import { Fish } from "./Fish";
+import { RoomModel } from "./room/RoomModel";
+import { BirdInfo } from "../game/BirdConfig";
 
 export default class RoomLogic {
     private countDown: number;
     private warDisPlay: cc.Node;
     private warId: number;
 
+    //RoomModel
+    private _roomModel: RoomModel;
     //userId
     private _userId: number;
 
@@ -22,11 +26,6 @@ export default class RoomLogic {
     //正在分身的roomPos
     private _arrCloneId: Array<number>;
 
-    /** 是否打开过玩吧UI */
-    private static _isOpenWanbaUI: boolean = false;
-    /** 假广播timer */
-    // private _timerBroad:egret.Timer;
-
     private _view: GameTest;
 
     /**
@@ -37,20 +36,20 @@ export default class RoomLogic {
 
     public constructor(roomView: GameTest) {
         this._view = roomView;
-        this._arrCloneId = new Array<number>();
+        // this._arrCloneId = new Array<number>();
     }
 
     /**
    * 房间逻辑信息初始化
    */
     public init(): void {
-
+        this._roomModel = new RoomModel();
     }
 
     viewLoadOk() {
         let roomType = 1;
         //播放背景音乐
-        this._view.playBGMusic(roomType);
+        // this._view.playBGMusic(roomType);
 
         //开启碰撞系统
         // let manager = cc.director.getCollisionManager();
@@ -66,7 +65,7 @@ export default class RoomLogic {
         //添加断线重连监听
         // GlobalManager.getInstance().addReconnectListener();
         // }, 0);
-        
+
         // this.initDjs();
     }
 
@@ -88,7 +87,7 @@ export default class RoomLogic {
             // }
         }
         //设置房间玩家数据
-        view.resetView(isFlip, roomerList, myPos);
+        // view.resetView(isFlip, roomerList, myPos);
 
         //初始化对象池
         //初始化渔网对象池 和 子弹对象池
@@ -101,18 +100,20 @@ export default class RoomLogic {
         }
         // NetPool.getNetPool().init(netIdArr); //初始化渔网对象池
 
-        BulletPool.getBulletPool().init(resBulletIdArr); // 初始化子弹对象池
-        BirdPool.getFIshPool().init();
+        // BulletPool.getBulletPool().init(resBulletIdArr); // 初始化子弹对象池
+        BirdPool.getFIshPool().init();  //初始化鱼对象池
 
         //初始化鱼
         // let fishList = this._roomModel.getFishList(); //Array<Fish>
-        let fishList = new Array<Fish>();
+        let fishList: BirdInfo[] = VVMgr.birdInfoArr;
+        // let fishList = new Array<Fish>();
         let currentTime = new Date().getTime();
         for (let i = 0; i < fishList.length; i++) {
             let fish = fishList[i];
-            let aliveTime = fish.aliveTime;
-            aliveTime = aliveTime - (currentTime - fish.addFishDate);
-            this._view.getFishLayer().addUnitFish(fish.fishType, fish.uniqId, fish.fishId, fish.pathId, fish.coord.x, fish.coord.y, aliveTime);
+            // let aliveTime = fish.aliveTime;
+            // aliveTime = aliveTime - (currentTime - fish.addFishDate);
+            // this._view.getFishLayer().addUnitFish(fish.fishType, fish.uniqId, fish.fishId, fish.pathId, fish.coord.x, fish.coord.y, aliveTime);
+            this._view.getFishLayer().addUnitFish(1, fish.bird_id, 0, 200, 300);
             fishList[i] = null;
         }
 

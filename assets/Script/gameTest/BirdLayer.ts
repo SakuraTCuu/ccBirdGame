@@ -19,18 +19,18 @@ export enum PointEventEnum {
 export default class BirdLayer extends cc.Component {
 
     private _objectLayer: cc.Node; // 显示鱼的对象层
-    private _layer1: cc.Node;
-    private _layer2: cc.Node;
-    private _layer3: cc.Node;
+    // private _layer1: cc.Node;
+    // private _layer2: cc.Node;
+    // private _layer3: cc.Node;
 
     private _fishList: Array<BirdBase> = new Array<BirdNode>();
 
     private _isFlip = false;
     onLoad() {
         this._objectLayer = this.node;
-        this._layer1 = this._objectLayer.getChildByName("_layer_1");
-        this._layer2 = this._objectLayer.getChildByName("_layer_2");
-        this._layer3 = this._objectLayer.getChildByName("_layer_3");
+        // this._layer1 = this._objectLayer.getChildByName("_layer_1");
+        // this._layer2 = this._objectLayer.getChildByName("_layer_2");
+        // this._layer3 = this._objectLayer.getChildByName("_layer_3");
         //检测清鱼的函数，5秒钟执行一次
         this.schedule(this.checkClearFish, 5);
     }
@@ -99,7 +99,7 @@ export default class BirdLayer extends cc.Component {
     }
 
     //加鱼
-    public addUnitFish(type: number, uniqIdArr: Array<number>, fishId: number, pathId: number, posX: number, posY: number,
+    public addUnitFish(type: number, fishId: number, pathId: number, posX: number, posY: number,
         aliveTime: number = 0, pathPot: number = -1): void {
         // return;
         let fishAtLayer = -1; //鱼存在哪一层
@@ -121,41 +121,20 @@ export default class BirdLayer extends cc.Component {
             //处理已经在鱼塘中存活的鱼，让其不让在起始点出生。
             let rota = 0;
             let flipY = false;
-            if (aliveTime > 0) {
-                let result = self.getPointsAndPos(arr, aliveTime);
-                arr = result[0];
-                posX += result[1].x;
-                posY += result[1].y;
-                rota = result[2];
-                flipY = result[3];
-            }
-            // //处理葫芦产生的鱼路径问题 
-            // if (pathPot >= 0) {
-            //     let result = self.getPointsAndPosByCala(arr, pathPot);
-            //     arr = result[0];
-            //     posX += result[1].x;
-            //     posY += result[1].y;
-            //     rota = result[2];
-            //     flipY = result[3];
-            // }
-
+            //存活时间
+          
             fish.setFishPosition(posX, posY);
             fish.rotation = rota;
             //处理已经在鱼塘中存活的鱼反转问题
-            if ((aliveTime > 0) || (pathPot >= 0)) {
-                if (flipY) {
-                    fish.fishflipY();
-                }
-            }
+            // if ((aliveTime > 0) || (pathPot >= 0)) {
+            //     if (flipY) {
+            //         fish.fishflipY();
+            //     }
+            // }
 
-            // if (type == AddFishType.FISH) {
-            //     let fishVo = T_Fish_Table.getVoByKey(fishId);
-            //     fishAtLayer = fishVo.layer;
-            //     self.addFishAt(fish, fishAtLayer);
-            // } else {
+        
             //默认层级1
             self.addFishAt(fish, 1);
-            // }
 
             // if (APP.DEBUG) {  //调试模式 显示路径ID
             //     let lable = fish.getChildByName("lable");
@@ -171,7 +150,6 @@ export default class BirdLayer extends cc.Component {
 
             // 绑定游动逻辑
             ActionBase.bindMoveAction(arr, fish);
-
         }
         //创建鱼 
         fish = BirdPool.getFIshPool().getFish(fishId);
@@ -180,27 +158,31 @@ export default class BirdLayer extends cc.Component {
             fish.fishflipY();
         }
         fish.setType(type);
-        // drawFishHandler();
-        fish.setUniqId(uniqIdArr[0]);
-
+        drawFishHandler();
+        // fish.setUniqId(uniqIdArr[0]);
+        fish.setUniqId(0);
     }
 
     /** 把鱼添加到指定节点*/
     public addFishAt(fish: BirdBase, at: number): void {
-        switch (at) {
-            case 1:
-                this._fishList.push(fish);
-                this._layer1.addChild(fish, at);
-                break;
-            case 2:
-                this._fishList.push(fish);
-                this._layer2.addChild(fish, at);
-                break;
-            case 3:
-                this._fishList.push(fish);
-                this._layer3.addChild(fish, at);
-                break;
-        }
+        // switch (at) {
+        //     case 1:
+        //         this._fishList.push(fish);
+        //         this._layer1.addChild(fish, at);
+        //         break;
+        //     case 2:
+        //         this._fishList.push(fish);
+        //         this._layer2.addChild(fish, at);
+        //         break;
+        //     case 3:
+        //         this._fishList.push(fish);
+        //         this._layer3.addChild(fish, at);
+        //         break;
+        // }
+
+        this._fishList.push(fish);
+        this._objectLayer.addChild(fish, at);
+        cc.log(this._fishList);
     }
 
     // public getRoomUI(): RoomView {
@@ -230,7 +212,6 @@ export default class BirdLayer extends cc.Component {
         for (let i = 0; i < deadLen; i++) {
             let index = this._fishList.indexOf(deadFish[i]);
             this._fishList.splice(index, 1);
-            ///进池,鱼组中的fishbase进池，鱼组的node。设置标记时直接干掉了
             BirdPool.getFIshPool().pushFish(deadFish[i]);
         }
     }
@@ -239,9 +220,9 @@ export default class BirdLayer extends cc.Component {
         this.unscheduleAllCallbacks();
         this.unschedule(this.checkClearFish);
         this._objectLayer = null;
-        this._layer1 = null;
-        this._layer2 = null;
-        this._layer3 = null;
+        // this._layer1 = null;
+        // this._layer2 = null;
+        // this._layer3 = null;
         this._fishList = null;
     }
 }

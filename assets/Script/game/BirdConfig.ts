@@ -1,13 +1,14 @@
 // x小鸟信息接口 
 export interface BirdInfo {
     id: string;
-    bird_id: string;
-    name: number;
+    bird_id: number;
+    name: string;
     speed: number;
     direction: number;//1表示向左到右 2表示右向左
     size: number;//1 小 2 大
     total_blood: number;
     fix_blood: number;
+    number: number;  //小鸟图片标编号
 
     useXuL: boolean; //使用血量 依然飞行
     useDuZ: boolean; //使用独占 停止飞行

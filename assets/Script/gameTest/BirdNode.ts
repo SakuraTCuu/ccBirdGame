@@ -50,7 +50,8 @@ export default class BirdNode extends BirdBase {
 
     init(id: number): void {
         this.setType(-1);
-
+        let name = "Bird";
+        this.addFishData(id, name, 0, 0, 5);
     }
 
     /**
@@ -69,8 +70,8 @@ export default class BirdNode extends BirdBase {
         let spriteFrames = FishResLoadUtil.getFishRes(name);
         sprite.spriteFrame = spriteFrames[0];
         sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
-        fish.width *= 1.5;
-        fish.height *= 1.5;
+        // fish.width *= 1.5;
+        // fish.height *= 1.5;
 
         let animation = fish.addComponent(cc.Animation);
         let frame = 5;
@@ -82,7 +83,6 @@ export default class BirdNode extends BirdBase {
         animation.addClip(clip);
         animation.defaultClip = clip;
         animation.play(clip.name);
-
 
         fish.x = posX;
         fish.y = -posY;
