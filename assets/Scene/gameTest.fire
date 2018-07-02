@@ -288,7 +288,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "game_ui",
+    "_name": "game_uiLayer",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
