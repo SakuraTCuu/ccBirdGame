@@ -2493,6 +2493,8 @@
     "progressNode": {
       "__id__": 43
     },
-    "hintUINode": null
+    "hintUINode": {
+      "__id__": 55
+    }
   }
 ]

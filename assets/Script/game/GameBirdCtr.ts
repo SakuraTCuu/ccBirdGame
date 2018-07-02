@@ -68,7 +68,7 @@ export default class GameBirdCtr extends cc.Component {
                 spriteFrameS.push(this.birdAltas.getSpriteFrame(name));
             }
             bNode = this.buildBird(birdInfo, spriteFrameS);
-            bNode.scaleX = birdInfo.direction == 1 ? -1 : 1; 
+            // bNode.scaleX = birdInfo.direction == 1 ? -1 : 1; 
             if (birdInfo.size == 1) {
                 bNode.scale = 1;
             } else if (birdInfo.size == 2) {

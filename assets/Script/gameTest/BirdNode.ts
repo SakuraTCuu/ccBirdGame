@@ -1,7 +1,10 @@
 import BirdBase from "./BirdBase";
 import { FishResLoadUtil } from "./fishResLoadUtil";
+import VVMgr from "../core/VVMgr";
 
 export default class BirdNode extends BirdBase {
+
+    private birdInfoArr: any = null;
 
     /** 鸟的碰撞区 */
     public _rectList: Array<cc.Rect> = new Array<cc.Rect>();
@@ -21,8 +24,8 @@ export default class BirdNode extends BirdBase {
     public _bViewFlip: boolean;
 
     /** 基准适配比例 */
-    public static contentWidth = 1334;
-    public static contentHeight = 750;
+    public static contentWidth = 750;
+    public static contentHeight = 1334;
 
     /**基准颜色 */
     //用于恢复颜色
@@ -50,7 +53,9 @@ export default class BirdNode extends BirdBase {
 
     init(id: number): void {
         this.setType(-1);
-
+        let name = "bird";
+        this.addFishData(id, name, 0, 0, 5);
+        this.birdInfoArr = VVMgr.birdInfoArr;
     }
 
     /**
@@ -67,10 +72,36 @@ export default class BirdNode extends BirdBase {
         let sprite = fish.addComponent(cc.Sprite);
 
         let spriteFrames = FishResLoadUtil.getFishRes(name);
+        //所有鸟的图集 必须分开
+        let newSf = new Array<cc.SpriteFrame>();
+        // let count = this.birdInfoArr.length;
+        // count = count > 30 ? 30 : count;
+        // for (let i = 0; i < count; i++) {
+        //     let birdInfo = this.birdInfoArr[i];
+        //     for (let k = 0; k < 5; k++) {
+        //         name = i + "-" + k;
+        //         newSf.push(spriteFrames.getSpriteFrame(name));
+        //     }
+        //     if (birdInfo.size == 1) {
+        //         fish.scale = 1;
+        //     } else if (birdInfo.size == 2) {
+        //         fish.scale = 1.4;
+        //     } else if (birdInfo.size == 3) {
+        //         fish.scale = 1.8;
+        //     }
+        //     fish.active = true;
+        //     fish.scaleX = birdInfo.direction == 1 ? -fish.scaleX : fish.scaleX;
+
+        // }
+
+        for (let i = 0; i < 5; i++) {
+            newSf.push(spriteFrames[i]);
+        }
+
         sprite.spriteFrame = spriteFrames[0];
         sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
-        fish.width *= 1.5;
-        fish.height *= 1.5;
+        // fish.width *= 1.5;
+        // fish.height *= 1.5;
 
         let animation = fish.addComponent(cc.Animation);
         let frame = 5;
@@ -78,11 +109,10 @@ export default class BirdNode extends BirdBase {
             frame = frameRate;
         }
 
-        let clip = FishResLoadUtil.getFishResLoadUtil().getFishAnimationClip(name, frame, spriteFrames);
+        let clip = FishResLoadUtil.getFishResLoadUtil().getFishAnimationClip(name, frame, newSf);
         animation.addClip(clip);
         animation.defaultClip = clip;
         animation.play(clip.name);
-
 
         fish.x = posX;
         fish.y = -posY;
@@ -108,11 +138,10 @@ export default class BirdNode extends BirdBase {
     }
 
 
-
     //设置位置
     public setFishPosition(posX: number, posY: number): void {
         this.x = posX;
-        this.y = BirdNode.contentHeight - posY;
+        this.y = posY;
     }
 
     //在鸟身上加特效

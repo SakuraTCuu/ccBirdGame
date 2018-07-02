@@ -1,6 +1,7 @@
 import Game from "./Game";
 import { BirdState, BirdInfo } from "./BirdConfig";
 import Bullet from "./Bullet";
+import BirdPath from "./BirdPath";
 
 const { ccclass, property } = cc._decorator;
 
@@ -36,7 +37,7 @@ export default class BirdCtr extends cc.Component {
         this._contentNode = this.node.getChildByName('Content');
         this._contentAnim = this._contentNode.getComponent(cc.Animation);
         this._contentAnim.on("finished", this.onBirdAnimFinished, this);
-        
+
         this._goldNode = this.node.getChildByName('Gold');
         this._goldAnim = this._goldNode.getComponent(cc.Animation);
         this._goldAnim.on("finished", this.onGoldAnimFinshed, this);
@@ -74,7 +75,7 @@ export default class BirdCtr extends cc.Component {
         } else {
             // if (this._animingShot == false) return;
             // this._animingShot = false;
-            
+
             this.doResumeActions();
         }
     }
@@ -99,14 +100,14 @@ export default class BirdCtr extends cc.Component {
         this._goldNode.active = false;
 
         this.onBirdMoveFinished();
-        
+
         if (this._doDieResolve) {
             this._doDieResolve();
             this._doDieResolve = null;
         }
     }
 
-    update (dt) {
+    update(dt) {
         const currentPos = this.node.getPosition();
         // 如果位移不超过1，不改变角度
         if (cc.pDistance(this._lastPos, currentPos) < 1) return;
@@ -141,19 +142,34 @@ export default class BirdCtr extends cc.Component {
         // cc.log("---decorateBird");
         const gameJS = Game.instance;
         this.node.parent = gameJS.gameNode;
-        
+
         this.enabled = true;
         // this.node.active = true;
 
-        let x = -(gameJS.node.width * 0.5 + 250); 
-        if (this.birdInfo.direction == 1) {
-            x = -x;
-        }
-        const fromPos = new cc.Vec2(x, gameJS.randomGameNodeY());
+        // let x = -(gameJS.node.width * 0.5 + 250);
+        // if (this.birdInfo.direction == 1) {
+        //     x = -x;
+        // }
+        // const fromPos = new cc.Vec2(x, gameJS.randomGameNodeY());
+        // this.node.position = fromPos;
+
+        // const toPos = new cc.Vec2(-fromPos.x, gameJS.randomGameNodeY());
+        // const midPos = new cc.Vec2(gameJS.randomGameNodeX(), gameJS.randomGameNodeY());
+
+        //重新规划设计路线
+        // const fromPos = new cc.Vec2(-600, -650);
+        // this.node.position = fromPos;
+        // const midPos = new cc.Vec2(0, 650);
+        // const toPos = new cc.Vec2(600, -650);
+
+        let path = BirdPath.getRandomPathAction(this.birdInfo.direction);
+
+        const fromPos: cc.Vec2 = new cc.Vec2(path[0].x, path[0].y);
         this.node.position = fromPos;
 
-        const toPos = new cc.Vec2(-fromPos.x, gameJS.randomGameNodeY());
-        const midPos = new cc.Vec2(gameJS.randomGameNodeX(), gameJS.randomGameNodeY());
+        const midPos = new cc.Vec2(path[1].x, path[1].y);
+        const toPos = new cc.Vec2(path[2].x, path[2].y);
+
         const bezierTo = cc.bezierTo(cc.random0To1() * 5 + 5, [fromPos, midPos, toPos]);
         const seq = cc.sequence(bezierTo, cc.callFunc(this.onBirdMoveFinished, this));
         this.node.runAction(seq);
@@ -170,7 +186,7 @@ export default class BirdCtr extends cc.Component {
         this._isPausing = false;
 
         if (this.birdInfo.useXuL) { //使用血量卡 显示
-            this.doShwoHPNode(); 
+            this.doShwoHPNode();
         }
 
         this.node.opacity = 255;
@@ -278,7 +294,7 @@ export default class BirdCtr extends cc.Component {
     /**
      * 小鸟是否可以被射击
      */
-    canBeAttack () {
+    canBeAttack() {
         if (this.birdInfo.birdState == BirdState.Die) return false;
         if (Game.instance._usingDuZKa && this.birdInfo.useDuZ) return true;
         if (Game.instance._usingAimKa && this.birdInfo.useAim) return true;
@@ -287,10 +303,10 @@ export default class BirdCtr extends cc.Component {
         return false;
     }
 
-    
+
 
     // --------------- Game Invoke Method --------------- 
-    
+
     /**
      * 刷新小鸟血量
      * @param hp 
@@ -307,7 +323,7 @@ export default class BirdCtr extends cc.Component {
             cc.log("-----BirdAnim_WillDie");
             this.birdInfo.birdState = BirdState.WillDie;
             this.node.opacity = 160;
-        } 
+        }
     }
 
     /**
@@ -325,7 +341,7 @@ export default class BirdCtr extends cc.Component {
 
     // --------------- Tool Method --------------- 
 
-    canBeSelectToAttack () {
+    canBeSelectToAttack() {
         if (this.birdInfo.birdState == BirdState.Die) return false;
         if (Game.instance._usingDuZKa && this.birdInfo.useDuZ) return false;
         // cc.log("--- canBeSelectToAttack --- ture");
@@ -347,7 +363,7 @@ export default class BirdCtr extends cc.Component {
 
         this.hpNode = hpNode;
         this.hpNodeProBar = hpNode.getComponent(cc.ProgressBar);
-        this.hpNodeProBar.progress = this.birdInfo.total_blood/this.birdInfo.fix_blood;
+        this.hpNodeProBar.progress = this.birdInfo.total_blood / this.birdInfo.fix_blood;
     }
 
     /**
@@ -355,10 +371,10 @@ export default class BirdCtr extends cc.Component {
      */
     doHideHPNode() {
         if (this.hpNode == null) return;
-        
+
         this.hpNode.removeFromParent();
         Game.instance.putACacheHP(this.hpNode);
-        
+
         this.hpNode = null;
         this.hpNodeProBar = null;
     }
@@ -383,7 +399,7 @@ export default class BirdCtr extends cc.Component {
      */
     doHideAimNode() {
         if (this.aimNode == null) return;
-        
+
         this.aimNode.removeFromParent();
         Game.instance.putACacheAIM(this.aimNode);
         this.aimNode = null;

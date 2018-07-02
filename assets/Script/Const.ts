@@ -33,12 +33,12 @@ export enum WebCmd {
 
 export enum HTTPPath {
     REGISTERSMS             ="/sms/registerSend",
-    LOGINSMS                ="/sms/loginSend",
+    LOGINSMS                ="/sms/registerAndLoginSend",
     REGISTER                ="/user/register",
 
     GETSYSTEMVERSION        ="/static/getSystem",
 
-    LOGIN                   ="/user/login",
+    LOGIN                   ="/user/registerAndLogin",
     USERINFO                ="/user/userInfo",
 
     USERCARD                ="/UserCard/cardList",

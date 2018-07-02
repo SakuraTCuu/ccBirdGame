@@ -79,7 +79,6 @@ export default class GameTest extends cc.Component {
     /** 子弹最大数目 */
     private BULLET_MAX_COUNT: number;
 
-
     //逻辑处理
     private _roomLogic: RoomLogic;
     //roomIconUi
@@ -93,12 +92,14 @@ export default class GameTest extends cc.Component {
 
         //资源初始化完成
         this._roomLogic.init();
+
     }
 
     start() {
-        this._roomLogic.viewLoadOk();
-    }
 
+        this._roomLogic.viewLoadOk();
+
+    }
 
     private init(): void {
 

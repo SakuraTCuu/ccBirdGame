@@ -31,7 +31,6 @@ export default class BirdBase extends cc.Node {
     public FISH_POP_LAYER: cc.Node;
 
 
-
     constructor(id) {
         super();
         this._birdId = id;
@@ -93,6 +92,7 @@ export default class BirdBase extends cc.Node {
     public getBIRD_LAYER(): cc.Node {
         return this.BIRD_LAYER;
     }
+
     //获取特效层
     public getEFFECT_LAYER(): cc.Node {
         return this.EFFECT_LAYER;

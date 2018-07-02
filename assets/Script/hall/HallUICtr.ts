@@ -13,6 +13,7 @@ import HallSetting from "./HallSetting";
 import HallMsgContent from "./HallMsgContent";
 import SocketHint, { SocketHintType } from "../game/SocketHint";
 import { HintUIType } from "../HintUI";
+import ResLoadingManager from "../utils/ResLoadingManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -167,7 +168,12 @@ export default class HallUICtr extends cc.Component {
                 VVMgr.batteryInfoArr = <BatteryInfo[]>retData['battery'];
                 cc.director.preloadScene('game', (err) => {
                     Hall.instance.hideLoading();
+
+                    // cc.log("加载资源开始");
+                    //TODO 新添加 加载资源
+                    // ResLoadingManager.loadRoomRes(() => {
                     cc.director.loadScene('game');
+                    // });
                 });
             } else {
                 Hall.instance.showHintUI(HintUIType.Failure, callMsg['msg']);

@@ -21,26 +21,14 @@ export class FishResLoadUtil {
      * @param name 鱼资源名字
      */
     public static getFishRes(name: string) {
-        if (name === 'bandianyu'
-            || name === 'caihongyu'
-            || name === 'hetun'
-            || name === 'hudieyu'
-            || name === 'jianyu'
-            || name === 'qunbaiyu'
-            || name === 'redaiyu'
-            || name === 'wugui'
-            || name === 'wuzei'
-            || name === 'xiaochouyu'
-        ) {
-            return FishResLoadUtil.getXiaoyu(name);
-        } else {
-            let atlas: cc.SpriteAtlas = cc.loader.getRes(`fish/${name}`, cc.SpriteAtlas);
-            if (!atlas) {
-                cc.error("鱼纹理资源不存在" + name);
-                return;
-            }
-            return atlas.getSpriteFrames();
+
+        let atlas: cc.SpriteAtlas = cc.loader.getRes("bird/bird", cc.SpriteAtlas);
+        if (!atlas) {
+            cc.error("鱼纹理资源不存在" + name);
+            return;
         }
+        return atlas.getSpriteFrames();
+
     }
 
     //从图集中取出其中一条小鱼的资源
